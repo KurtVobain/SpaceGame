@@ -26,3 +26,5 @@ class Alien(Sprite):
         """Draw the alien at its current location"""
         self.screen.blit(self.image, self.rect)
         
+    def foo(self):
+        print(2)
