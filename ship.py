@@ -1,11 +1,12 @@
 import pygame
+import os
 
 class Ship():
     def __init__(self, ai_settings, screen):
         self.screen = screen
         self.ai_settings = ai_settings
         
-        self.image = pygame.image.load('images/ship2.bmp')
+        self.image = pygame.image.load(os.path.join(os.path.abspath('images'),'ship2.bmp'))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         

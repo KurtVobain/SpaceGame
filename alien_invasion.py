@@ -6,6 +6,12 @@ from game_stats import GameStats
 from ship import Ship
 from alien import Alien
 import game_functions as gf
+import sys
+import os
+
+
+if getattr(sys, 'frozen', False):
+    os.chdir(sys._MEIPASS)
 
 def run_game():
     pygame.init()
@@ -27,7 +33,7 @@ def run_game():
     gf.create_fleet(ai_settings, screen, ship, aliens)
     
     
-    pygame.mixer.music.load('sounds/bensound-moose.mp3')
+    pygame.mixer.music.load(os.path.join(os.path.abspath('sound'),'bensound-moose.mp3'))
     pygame.mixer.music.play()
     pygame.mixer.music.set_volume(0.2)
 

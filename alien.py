@@ -1,6 +1,8 @@
 import pygame
+import os
 from random import randint
 from pygame.sprite import Sprite
+
 
 class Alien(Sprite):
     """A class to represent a single alien in the fleet"""
@@ -14,8 +16,8 @@ class Alien(Sprite):
 
         #Load the alien image and set its rect atrinute
         self.image_arr = []
-        self.image_arr.append(pygame.image.load('images/alienship.bmp'))
-        self.image_arr.append(pygame.image.load('images/alienship2.bmp'))
+        self.image_arr.append(pygame.image.load(os.path.join(os.path.abspath('images'),'alienship.bmp')))
+        self.image_arr.append(pygame.image.load(os.path.join(os.path.abspath('images'),'alienship2.bmp')))
         self.image = self.image_arr[randint(0,1)]
         self.rect = self.image.get_rect()
         
